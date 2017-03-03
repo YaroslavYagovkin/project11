@@ -1,0 +1,13 @@
+%p#notice= notice
+%p
+  %strong Link name:
+  = @link.link_name
+%p
+  %strong Tags:
+  = @link.tags
+%p
+  %strong Description:
+  = @link.description
+= link_to 'Edit', edit_link_path(@link)
+|
+= link_to 'Back', links_path

@@ -1,0 +1,19 @@
+= simple_form_for(@link) do |f|
+  - if @link.errors.any?
+    #error_explanation
+      %h2
+        = pluralize(@link.errors.count, "error")
+        prohibited
+        this link from being saved:
+      %ul
+        - @link.errors.full_messages.each do |msg|
+          %li= msg
+  .form-inputs
+    = f.label :link_text, 'Link'
+    = f.text_field :link_text
+    = f.label :tags, 'Tags (separated by coma)'
+    = f.text_field :tags
+    = f.label :descriptio, 'Description'
+    = f.text_area :descriptio
+  .form-actions
+    = f.button :submit, 'Confirm'

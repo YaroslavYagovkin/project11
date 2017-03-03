@@ -1,0 +1,18 @@
+%h1= 'Links with tag: \' ' + @tag + ' \''
+
+%table
+  %thead
+    %tr
+      %th{ :width => '200px', :align => 'left' } Link text
+      %th{ :width => '300px', :align => 'left' } Description
+      %th{ :width => '300px', :align => 'left' } tags
+
+  %tbody
+    - @links.each do |link|
+      %tr
+        %td= link.link_text
+        %td= link.descriptio
+        %td= link.tags
+%br
+= link_to 'Back', show_all_tags_links_path
+= link_to 'Home', links_path

@@ -1,0 +1,7 @@
+%h1 Listing tags
+
+- @tag.each do |t|
+    = link_to t, '/links/show_link_by_tag_name?tags=' + t
+    %br
+%br
+= link_to 'Back', links_path

@@ -1,0 +1,23 @@
+%h1 Listing links
+
+%table
+  %thead
+    %tr
+      %th Link text
+      %th Tags
+      %th Description
+      %th
+      %th
+      %th
+
+  %tbody
+    - @links.each do |link|
+      %tr
+        %td= link_to link.link_text, 'http://' + link.link_text
+        %td= link.tags
+        %td= link.descriptio
+        %td= link_to 'Edit', edit_link_path(link)
+        %td= link_to 'Destroy', link, :method => :delete, :data => { :confirm => 'Are you sure?' }
+%br
+= link_to 'New Link', new_link_path
+= link_to 'Show all tags', show_all_tags_links_path
