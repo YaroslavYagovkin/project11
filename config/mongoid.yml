@@ -138,10 +138,19 @@ development:
 test:
   clients:
     default:
-      database: project11_test
+      database: project11
       hosts:
         - localhost:27017
       options:
         read:
           mode: :primary
         max_pool_size: 1
+        
+production:
+  clients:
+    default:
+      uri: <%= ENV['MONGODB_URI'] || ENV['MONGOHQ_URL'] || ENV['MONGO_URL'] || ENV['MONGOLAB_URI'] %>
+      options:
+        read:
+          mode: :primary
+max_pool_size: 1
